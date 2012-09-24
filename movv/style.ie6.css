@@ -1,0 +1,233 @@
+/* begin Page */
+
+/* Created by Artisteer v3.1.0.42580 */
+
+.cleared 
+{
+   width:1px;
+}
+
+/* Start Box */
+.box, .box-body {
+   zoom:1;
+}
+/* End Box */
+/* Start Bar */
+.bar{
+   zoom:1;
+}
+/* End Bar */
+
+/* end Page */
+
+/* begin Menu */
+.hmenu li.hmenuhover{
+   z-index: 10000;
+}
+.hmenu .hmenuhoverUL{
+   visibility: visible;
+   top: 100%;
+   left: 0;
+}
+.hmenu .hmenuhoverUL .hmenuhoverUL{
+   top: 0;
+   left: 100%;
+}
+.hmenu ul li {
+   float: left !important;
+   width: 100%;
+}
+.nav
+{
+   zoom: 1;
+   height: 46px;
+   background:#63AFDE;
+}
+.nav-wrapper{
+   width:expression(artFluidSheetComputedWidth('90%', 700, 1728));
+} 
+
+/* end Menu */
+
+/* begin MenuItem */
+.hmenu a 
+{
+   display:inline-block;
+   color: #000000;
+   padding: 0 44px;
+   line-height: 32px;
+   text-align: center;
+}
+
+.hmenu a.active 
+{
+   color: #FFFFFF;
+   background-color:#77BAFE;
+}
+
+.hmenu a:hover, .hmenuhoverA,  .hmenuhover a 
+{
+   color: #FAFDFF;
+   background-color:#49A3FD;
+}
+
+/* end MenuItem */
+
+/* begin MenuSeparator */
+ul.hmenu li {
+   margin-left:expression(this.previousSibling==null?'0':'15px');
+}
+ul.hmenu li li{
+   margin-left:0;
+}
+
+span.hmenu-separator
+{
+   position:absolute;
+   display: block;
+   top:0;
+   left:-15px;
+   width: 15px;
+   height: 32px;
+   background: url('images/menuseparator.png') center center no-repeat;
+}
+/* end MenuSeparator */
+
+/* begin MenuSubItem */
+.hmenu ul a 
+{
+   color: #065179 !important;
+   float: left;
+   text-indent: 17px;
+}
+
+.hmenu ul a:hover, .hmenu ul .hmenuhover .hmenuhoverA 
+{
+   color: #000000 !important;
+   background-position: left bottom;
+}
+
+/* end MenuSubItem */
+
+/* begin Box, Sheet */
+.sheet {
+   background:#FFFFFF;
+   width:expression(artFluidSheetComputedWidth('90%', 700, 1728));
+}
+#page-background-top-texture, #page-background-middle-texture
+{
+   width: expression(document.body.clientWidth>700?"100%":"700px");
+}
+
+/* end Box, Sheet */
+
+/* begin Layout */
+.content-layout, .content-layout-row, .layout-cell 
+{
+   display: block;
+   zoom: 1;
+}
+.layout-cell
+{
+   position:relative;
+   float: left;
+   clear: right;
+}
+/* end Layout */
+
+/* begin Box, Block */
+.block {
+   background:#FFFFFF;
+}
+/* end Box, Block */
+
+/* begin Box, BlockContent */
+.blockcontent {
+   background:#FFFFFF;
+}
+.blockcontent-body ul li
+{
+   height: 1%;
+   background: none;
+   behavior: expression(this.runtimeStyle.filter?'':this.runtimeStyle.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+artGetStyleUrl()+"images/blockcontentbullets.png',sizingMethod='crop')");
+}
+
+/* end Box, BlockContent */
+
+/* begin Button */
+.button-wrapper 
+{
+   zoom: 1;
+}
+
+.button-wrapper .button-l, .button-wrapper .button-r 
+{
+   display: none;
+}
+
+.button-wrapper .button
+{
+   float: left;
+}
+/* end Button */
+
+/* begin Box, Post */
+.post {
+   background:#FFFFFF;
+}
+/* end Box, Post */
+
+/* begin PostIcons, PostHeaderIcons */
+.postheadericons span
+{
+   zoom: 1;
+}
+/* end PostIcons, PostHeaderIcons */
+
+/* begin PostBullets */
+.post ul li, .post ol ul li
+{
+   height: 1%;
+   background: none;
+   behavior: expression(this.runtimeStyle.filter?'':this.runtimeStyle.filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"+artGetStyleUrl()+"images/postbullets.png',sizingMethod='crop')");
+   padding-left: 14px;
+   /* makes "ul li" not to align behind the image if they are in the same line */
+  overflow-x: visible;
+   overflow-y: hidden;
+}
+
+.post ul ol li
+{
+   background: none;
+   behavior: expression(this.runtimeStyle.filter?'':this.runtimeStyle.filter="");
+   padding-left: 0;
+   /* overrides overflow for "ul li" and sets the default value */
+  overflow: visible;
+}
+/* end PostBullets */
+
+/* begin PostIcons, PostFooterIcons */
+.postfootericons span
+{
+   zoom: 1;
+}
+/* end PostIcons, PostFooterIcons */
+
+/* begin Footer */
+.footer-body{
+   padding-right: 0;
+   zoom:1;
+}
+.footer{
+   zoom:1;
+   background:#FFFFFF;
+}
+
+/* end Footer */
+
+/* begin LayoutCell, content */
+.content {
+   width: auto;
+}
+/* end LayoutCell, content */
+
