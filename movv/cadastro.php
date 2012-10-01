@@ -13,6 +13,7 @@
 
     <script type="text/javascript" src="jquery.js"></script>
     <script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="js.js"></script>
 
 </head>
 <body>
@@ -40,8 +41,10 @@
                                 <h2 class="postheader">Cadastro
                                 </h2>
                                                 <div class="postcontent">
-                                                    <!-- Conteudo -->
-                                                    
+													<span>Nome: <input name="cadastro_nome" id="cadastro_nome" value="" /></span><br />
+													<span>Email: <input name="cadastro_email" id="cadastro_email" value="" /></span><br />
+													<span>Senha: <input name="cadastro_senha" id="cadastro_senha" value="" type="password"/></span><br />
+													<input id="cadastrar" type="button" value="Cadastrar"/>
 
                 </div>
                 <div class="cleared"></div>

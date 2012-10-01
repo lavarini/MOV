@@ -13,9 +13,15 @@
 
         <script type="text/javascript" src="jquery.js"></script>
         <script type="text/javascript" src="script.js"></script>
+		<script type="text/javascript" src="js.js"></script>
 
     </head>
     <body>
+		<div class="login" style="display:none">
+			<input name="email" id="email" value="" />
+			<input name="senha" id="senha" value="" type="password"/>
+			<input id="logar" type="button" value="Login"/>
+		</div>
         <div id="main">
             <div class="cleared reset-box"></div>
             <div class="bar nav">
@@ -41,7 +47,7 @@
                                                     
                                                 </h2>
                                                 <div class="postcontent">
-                                                          <!-- -->
+                                                    
                                                 </div>
                                                 <div class="cleared"></div>
                                             </div>
