@@ -26,7 +26,7 @@
 	
 	<?php
 	require_once './config.php';
-	if(verif_login){
+	if(verif_login()){
 		$html = '<li id="logged"><span>Bem vindo '.$_COOKIE['nome'].'!</span></li>';
 		echo $html;
 	}else{
