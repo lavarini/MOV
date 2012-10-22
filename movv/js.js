@@ -26,6 +26,7 @@ $(document).ready(function() {
 				document.cookie = ['idUsuarios=',data.cookies.idUsuarios].join('');
 				document.cookie = ['email=',data.cookies.email].join('');
 				document.cookie = ['checkup=',data.cookies.checkup].join('');
+				document.cookie = ['nome=',data.cookies.nome].join('');
             },
             error: function (data) {
                 console.log(data);

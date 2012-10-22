@@ -24,8 +24,15 @@
         
     </li>
 	
-	<li id="login">
-        <a href="#">Login</a>
-    </li>
+	<?php
+	require_once './config.php';
+	if(verif_login){
+		$html = '<li id="logged"><span>Bem vindo '.$_COOKIE['nome'].'!</span></li>';
+		echo $html;
+	}else{
+		$html = '<li id="login"><a href="#">Login</a></li>';
+		echo $html;
+	}
+	?>
     
 </ul>

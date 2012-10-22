@@ -1,5 +1,6 @@
 <?php
 require_once 'conexao.php';
+require_once './../config.php';
 
 class login {
 
@@ -8,8 +9,6 @@ class login {
 	private $dadosUser = array ();
 
     public $arrCookies = array();
-	
-	public $EMBARALHAR = 'projetopaz';
 	
 	function __construct() {
 		$this->conn = new Conexao();
@@ -72,8 +71,9 @@ class login {
     	$cookies = array();
         $cookies['email'] = $this->dadosUser['email'];
 		$cookies['idUsuarios'] = $this->dadosUser['idUsuarios'];
+		$cookies['nome'] = $this->dadosUser['nome'];
 
-        $cookies['checkup'] = md5($this->dadosUser['idUsuarios']. $this->EMBARALHAR . $this->dadosUser['email']);
+        $cookies['checkup'] = md5($this->dadosUser['idUsuarios']. EMBARALHAR . $this->dadosUser['email']);
 
         $this->arrCookies = $cookies;
                 
