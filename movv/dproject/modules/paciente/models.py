@@ -9,27 +9,18 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-
-SEXO_CHOICES = (
-    ('masculino', 'M'),
-    ('feminino', 'F'),
-    )
-
 class Paciente(models.Model):
-    id_paciente = models.IntegerField(primary_key=True)
-    prontuario = models.IntegerField()
+    id_paciente = models.AutoField(primary_key=True)
+    prontuario = models.CharField(max_length=255, unique=True)
     nome = models.CharField(max_length=255)
-    data_nascimento = models.DateTimeField(null=True, blank=True)
-    sexo = models.CharField(_('Sexo'),
-        choices=SEXO_CHOICES,
-        max_length=1)
-    rg = models.IntegerField()
-    cpf = models.IntegerField()
-    telefone = models.IntegerField()
-    cep = models.IntegerField()
-    endereco = models.CharField(max_length=255)
-    complemento = models.CharField(max_length=255)
-    cidade = models.CharField(max_length=255)
+    data_nascimento = models.DateField()
+    rg = models.CharField(max_length=255, null=True, blank=True)
+    cpf = models.CharField(max_length=255, unique=True)
+    telefone = models.CharField(max_length=255, null=True, blank=True)
+    cep = models.CharField(max_length=255, null=True, blank=True)
+    endereco = models.CharField(max_length=255, null=True, blank=True)
+    complemento = models.CharField(max_length=255, null=True, blank=True)
+    cidade = models.CharField(max_length=255, null=True, blank=True)
 
     class Meta:
         verbose_name = ('Paciente')
@@ -40,20 +31,20 @@ class Paciente(models.Model):
         return self.nome
 
 class Nascimento(models.Model):
-    id_nascimento = models.IntegerField(primary_key=True)
+    id_nascimento = models.AutoField(primary_key=True)
     id_mae = models.ForeignKey(Paciente,
         related_name='id_paciente_mae',
         db_column='id_paciente')
-    nome_pai = models.CharField(max_length=255)
-    rg_pai = models.IntegerField()
-    cpf_pai = models.IntegerField()
-    data = models.DateTimeField()
-    inicio_gestacao = models.DateTimeField()
+    nome_pai = models.CharField(max_length=255, null=True, blank=True)
+    rg_pai = models.CharField(max_length=255, null=True, blank=True)
+    cpf_pai = models.CharField(max_length=255, null=True, blank=True)
+    data = models.DateField()
+    inicio_gestacao = models.DateField()
 
     class Meta:
-        verbose_name = ('Nascimento')
-        verbose_name_plural = ('Nascimentos')
+        verbose_name = ('Bebe')
+        verbose_name_plural = ('Bebes')
         db_table = u'nascimento'
 
     def __unicode__(self):
-        return self.data
+        return str(self.data)

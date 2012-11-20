@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 ################################################################################
-# Administração do módulo eusou
+# Administração do módulo pacientes
 #
 # @author: Alexandre Lavarini Matoso
 # @since: 31/03/2011
@@ -42,9 +42,9 @@ class NascimentoFilter(SimpleListFilter):
         # to decide how to filter the queryset.
         semanas = (datetime.date.today() - datetime.timedelta(7*32))
         if self.value() == 'antes':
-            return queryset.filter(inicio_gestacao__lt=semanas)
-        if self.value() == 'depois':
             return queryset.filter(inicio_gestacao__gt=semanas)
+        if self.value() == 'depois':
+            return queryset.filter(inicio_gestacao__lt=semanas)
 
 class PacienteAdmin(admin.ModelAdmin):
     class Meta:
@@ -59,15 +59,27 @@ class NascimentoAdmin(admin.ModelAdmin):
     """
     """
     class Meta:
-        verbose_name = 'Nascimento'
+        verbose_name = 'Bebe'
 
-    search_fields = ('nome_pai', 'inicio_gestacao', 'data', 'id_mae')
+    search_fields = ('nome_pai', 'inicio_gestacao', 'data', 'id_mae__nome', 'id_mae__cpf', 'id_mae__rg',)
     ordering = ['-id_nascimento']
     list_display = ('inicio_gestacao', 'id_mae', 'data',)
     raw_id_fields = ('id_mae', )
     list_filter = (NascimentoFilter,)
 
+#class DoadorAdmin(admin.ModelAdmin):
+#    """
+#    """
+#    class Meta:
+#        verbose_name = 'Doador'
+#
+#    search_fields = ('id_paciente__nome', 'id_paciente__prontuario', 'id_paciente__cpf')
+#    ordering = ['-id_doador']
+#    list_display = ('id_paciente__nome', 'id_paciente__cpf', )
+    #raw_id_fields = ('id_paciente', )
+
 
 admin.site.register(Paciente, PacienteAdmin)
 admin.site.register(Nascimento, NascimentoAdmin)
+#admin.site.register(Doador, DoadorAdmin)
 
